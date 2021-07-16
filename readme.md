@@ -75,6 +75,7 @@
 
 > Interesting questions in this area:
 > * You have to choose the database for your startup. What it will be and why?
+> * What would you suggest to do with the table which has super huge amount of data?
 
 <br>
 
@@ -122,11 +123,15 @@
 
 <br>
 
-### Step 10. Check the leadership skills. Speak in English
+### Step 10. Speak in English
 
-* How to estimate a huge task
-* Deadline is tomorrow, but the team needs 1 month more
-* There is a toxic person in the team
-* What if seniors disagree with a suggested solution
-* ***What if you need to build a team of 5 engineers. What the setup will be and why? (for instance 1 TL, 1 Sr, 2 Mids,
-  1 Jr)
+* Estimation
+    * How to estimate a huge task
+    * Deadline is tomorrow, but the team needs 1 month more to finish
+* For Leads
+    * There is a toxic person in the team
+    * What if seniors disagree with a suggested solution
+    * ***What if you need to build a team of 5 engineers. What the setup will be and why? (for instance 1 TL, 1 Sr, 2
+      Mids, 1 Jr)
+* For Devs
+    * What if you stuck with your task?
