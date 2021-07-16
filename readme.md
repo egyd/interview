@@ -44,7 +44,7 @@
 
 ### Step 3. Speak about .NET and Web.
 
-* Solve the [Tasks](c-sharp-tasks.cs)
+* Solve the [Tasks](dotnet-tasks.cs)
 * SOLID
 
 > Interesting questions in this area:
