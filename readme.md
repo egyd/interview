@@ -44,7 +44,7 @@
 
 ### Step 3. Speak about .NET and Web.
 
-* Solve the [Tasks](c-sharp-questions.cs)
+* Solve the [Tasks](c-sharp-tasks.cs)
 * SOLID
 
 > Interesting questions in this area:
@@ -54,12 +54,12 @@
 
 ### Step 4. Speak about Front-End.
 
-* Solve the [Tasks](js-questions.js)
+* Solve the [Tasks](js-tasks.js)
 * Webpack and Bundles
 * Caching
 
 > Interesting questions in this area:
-> * TODO
+> * What if bundle is being downloaded too slow?
 
 <br>
 
@@ -74,6 +74,7 @@
 * Caching
 
 > Interesting questions in this area:
+> * You need to run a migration script in production, but it takes 10+ mins. How to run it without a downtime? 
 > * You have to choose the database for your startup. What it will be and why?
 > * What would you suggest to do with the table which has super huge amount of data?
 
@@ -115,7 +116,7 @@
 * OWASP and GDPR
 
 > Interesting questions in this area:
-> * TODO
+> * How would you suggest protect your website against bots and similar tools?
 
 <br>
 
