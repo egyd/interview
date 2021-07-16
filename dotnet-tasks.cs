@@ -316,15 +316,22 @@ public class Task10
 
 class Task11
 {
-    public void Run()
+    const int minute = 60 * 1000;
+
+    private void Method1()
     {
-        new System.Threading.Thread(() => System.Console.WriteLine("Thread 1")).Start();
+        for(int i = 0; i < 10000000; ++i)
+        {
+            new Thread(() => Thread.Sleep(minute)).Start();
+        }
+    }
 
-        System.Threading.Tasks.Task.Run(() => System.Console.WriteLine("Thread 2")).Wait();
-
-        System.Threading.ThreadPool.QueueUserWorkItem(state => System.Console.WriteLine("Thread 3"));
-
-        System.Console.ReadKey();
+    private void Method2()
+    {
+        for(int i = 0; i < 10000000; ++i)
+        {
+            new Task(() => Task.Delay(minute).Wait()).Run();
+        }
     }
 }
 
@@ -342,38 +349,32 @@ class Task11
 ---------------------------------------------------------------------------
 */
 
-public class OrdersController : ApiController
+public class UsersController : ApiController
 {
     private readonly Repository _repository;
 
-    public OrdersController()
+    public UsersController()
     {
         _repository = new Repository();
     }
 
-    public HttpResponseMessage Get(int id)
+    public HttpResponseMessage GetUser(int id)
     {
-        var order = _repository.Get<Order>(id);
-
-        return order == null
-            ? Request.CreateResponse(HttpStatusCode.NotFound)
-            : Request.CreateResponse(HttpStatusCode.OK, order);
+        var user = _repository.Get<User>(id);
+        return Request.CreateResponse(HttpStatusCode.OK, user);
     }
 
-    public HttpResponseMessage Post(Order order)
+    public HttpResponseMessage PostUser(User user)
     {
-        const decimal minOrder = 1000m;
-
-        var total = order.Items.Sum(x => x.UnitPrice * x.Quantity);
-
-        if (total < minOrder)
+        const int passwordLength = 10;
+        if (user.password.length < passwordLength)
         {
             return Request.CreateResponse(HttpStatusCode.PreconditionFailed);
         }
 
-        _repository.Save(order);
+        _repository.Save(user);
 
-        SmtpHelper.SendEmail(EmailType.OrderReceived);
+        EmailHelper.SendEmail(EmailType.UserCreated);
 
         return Request.CreateResponse(HttpStatusCode.Created);
     }
